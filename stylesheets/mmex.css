@@ -16,11 +16,14 @@ body {
 }
 
 .page-header {
-    background-image: url('../images/mmex_r3.png');
+    /* background-image: url('../images/mmex_r3.png'); */
     background-color: #069278;
+    background-image: none;
     background-position: center;
     background-repeat: no-repeat;
-    height: 38em;
+    /*height: 38em; */
+    height: inherit;
+    padding: inherit;
 
     margin: 0;
 }
@@ -28,4 +31,3 @@ body {
 .main-content {
     max-width: 90rem;
 }
-
