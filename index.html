@@ -50,7 +50,9 @@
 				<img src="images/phone.png">
 			</div>
 			<div class="col-sm-8">
-                <table style="height: 34rem; width: 100%;">
+                <!-- title -->
+                <table style="height: 20rem; width: 100%;">
+                    <tr style="height: 5rem;"></tr>
                     <tr>
                         <td valign="middle">
                             <p style="font-size: 3rem;">Money Manager Ex for Android</p>
@@ -62,7 +64,41 @@
                         </td>
                     </tr>
                 </table>
-                <div style="text-align: left; font-style: italic;">
+
+                <!-- donation links -->
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-sm-4">
+                            <!-- google play link -->
+                            <a href="http://play.google.com/store/apps/details?id=com.money.manager.ex">
+                                <img src="https://developer.android.com/images/brand/en_app_rgb_wo_60.png"
+                                     alt="MoneyManagerEx for Android on PlayStore">
+                            </a>
+                        </div>
+                        <div class="col-sm-3">
+                            <!-- PayPal donation link -->
+                            <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
+                                <input type="hidden" name="cmd" value="_s-xclick">
+                                <input type="hidden" name="hosted_button_id" value="5U7RXC25C9UES">
+                                <input type="image" src="https://www.paypalobjects.com/en_US/AT/i/btn/btn_donateCC_LG.gif"
+                                       border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">
+                                <img alt="" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1">
+                            </form>
+                        </div>
+                        <!-- BitCoin donation link -->
+                        <!-- https://en.bitcoin.it/wiki/Promotional_graphics -->
+                        <div class="col-sm-5">
+                            <a href="bitcoin:1Mx4RTC3mq4etihLGpPYFf28xQWi3AcW2F?label=donation">
+                                <img src="https://en.bitcoin.it/w/images/en/7/74/BC_Rnd_64px.png" style="width:150px;" />
+                                <img src="images/bitcoin-address.png" style="width: 100px; margin: 2px;" />
+                                <p class="text-center" style="font-size: small;">1Mx4RTC3mq4etihLGpPYFf28xQWi3AcW2F</p>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- footer -->
+                <div style="text-align: left; font-style: italic; margin-top: 3rem;">
                     Desktop version of Money Manager Ex runs on all the major OS's, like <b>Windows</b>,
                     <b>MacOS</b>, and <b>Linux</b>.
                 </div>
@@ -86,38 +122,6 @@
 </a>
 
 <section class="main-content">
-
-<div class="container-fluid">
-    <!-- donation links -->
-    <div class="row">
-        <div class="col-sm-4">
-            <!-- google play link -->
-            <a href="http://play.google.com/store/apps/details?id=com.money.manager.ex">
-                <img src="https://developer.android.com/images/brand/en_app_rgb_wo_60.png"
-                     alt="MoneyManagerEx for Android on PlayStore">
-            </a>
-        </div>
-        <div class="col-sm-4">
-            <!-- PayPal donation link -->
-            <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
-                <input type="hidden" name="cmd" value="_s-xclick">
-                <input type="hidden" name="hosted_button_id" value="5U7RXC25C9UES">
-                <input type="image" src="https://www.paypalobjects.com/en_US/AT/i/btn/btn_donateCC_LG.gif"
-                       border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">
-                <img alt="" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1">
-            </form>
-        </div>
-        <!-- BitCoin donation link -->
-        <!-- https://en.bitcoin.it/wiki/Promotional_graphics -->
-        <div class="col-sm-4">
-            <a href="bitcoin:1Mx4RTC3mq4etihLGpPYFf28xQWi3AcW2F?label=donation">
-                <img src="https://en.bitcoin.it/w/images/en/7/74/BC_Rnd_64px.png" style="width:150px;" />
-                <img src="images/bitcoin-address.png" style="width: 100px; margin: 2px;" />
-                <p class="text-center" style="font-size: small;">1Mx4RTC3mq4etihLGpPYFf28xQWi3AcW2F</p>
-            </a>
-        </div>
-    </div>
-</div>
 
     <h2>
         MoneyManagerEx for Android
@@ -257,6 +261,7 @@
 </section>
 
 <!-- scripts -->
+<script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
 
 </body>
