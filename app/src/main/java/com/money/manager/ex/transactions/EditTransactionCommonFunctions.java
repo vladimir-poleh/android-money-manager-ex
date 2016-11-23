@@ -1059,7 +1059,7 @@ public class EditTransactionCommonFunctions {
 
         viewHolder.accountFromLabel.setText(isTransfer ? R.string.from_account : R.string.account);
         viewHolder.tableRowAccountTo.setVisibility(isTransfer ? View.VISIBLE : View.GONE);
-        viewHolder.tableRowPayee.setVisibility(!isTransfer ? View.VISIBLE : View.GONE);
+//        viewHolder.tableRowPayee.setVisibility(!isTransfer ? View.VISIBLE : View.GONE);
         viewHolder.tableRowAmountTo.setVisibility(isTransfer ? View.VISIBLE : View.GONE);
 
         refreshControlTitles();
