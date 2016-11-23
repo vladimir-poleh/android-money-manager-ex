@@ -413,6 +413,7 @@ public class AllDataAdapter
 
     private String getPayeeName(Cursor cursor, boolean isTransfer) {
         String result;
+        String payee = cursor.getString(cursor.getColumnIndex(PAYEE));
 
         if (isTransfer) {
             // write ToAccountName instead of payee on transfers.
@@ -446,9 +447,13 @@ public class AllDataAdapter
             // append square brackets around the account name to distinguish transfers visually.
             accountName = "[%]".replace("%", accountName);
             result = accountName;
+
+            if (!TextUtils.isEmpty(payee)) {
+                result += " (%)".replace("%", payee);
+            }
         } else {
             // compose payee description
-            result = cursor.getString(cursor.getColumnIndex(PAYEE));
+            result = payee;
         }
 
         return result;
