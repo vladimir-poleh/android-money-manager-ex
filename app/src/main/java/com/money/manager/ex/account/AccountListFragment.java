@@ -103,6 +103,7 @@ public class AccountListFragment
         SimpleCursorAdapter adapter = (SimpleCursorAdapter) getListAdapter();
         Cursor cursor = (Cursor) adapter.getItem(info.position);
         menu.setHeaderTitle(cursor.getString(cursor.getColumnIndexOrThrow(Account.ACCOUNTNAME)));
+        boolean isFavorite = "true".equalsIgnoreCase(cursor.getString(cursor.getColumnIndex(Account.FAVORITEACCT)));
 
         long accountId = info.id;
         AccountService service = new AccountService(getActivity());
@@ -110,6 +111,7 @@ public class AccountListFragment
         MenuHelper menuHelper = new MenuHelper(getActivity(), menu);
         menuHelper.addEditToContextMenu();
         menuHelper.addDeleteToContextMenu(!service.isAccountUsed(accountId));
+        menuHelper.addFavoriteToContextMenu(isFavorite);
     }
 
     @Override
@@ -131,6 +133,14 @@ public class AccountListFragment
 
             case DELETE:
                 showDeleteConfirmationDialog(accountId);
+                break;
+
+            case AddFavorite:
+                setFavorite(accountId, true);
+                break;
+
+            case RemoveFavorite:
+                setFavorite(accountId, false);
                 break;
         }
         return false;
@@ -301,5 +311,10 @@ public class AccountListFragment
         // force reset loader on start. try to fix 2155
         // becouse normaly was call duble
         restartLoader();
+    }
+
+    private void setFavorite(long accountId, boolean favorite) {
+        AccountService service = new AccountService(getActivity());
+        service.setFavorite(accountId, favorite);
     }
 }

@@ -923,4 +923,6 @@
     <string name="changelog_title">Important What\'s new!!</string>
     <string name="changelog_1086">New version 5.4\n- Added new Beta feature for Merge engine. Try to merge file when both are changed. Enable it in setting->Sync->Merge</string>
 
+    <string name="add_to_favourite">Add to Favourite</string>
+    <string name="remove_from_favourite">Remove from Favourite</string>
 </resources>
