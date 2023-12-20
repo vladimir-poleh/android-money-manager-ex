@@ -54,6 +54,12 @@ public class MenuHelper {
         menu.add(Menu.NONE, ContextMenuIds.DELETE.getId(), Menu.NONE, getContext().getString(R.string.delete));
     }
 
+    public void addFavoriteToContextMenu(boolean isFavorite) {
+        String menuText = getContext().getString(isFavorite ? R.string.remove_from_favourite : R.string.add_to_favourite);
+        int menuId = (isFavorite ? ContextMenuIds.RemoveFavorite : ContextMenuIds.AddFavorite).getId();
+        menu.add(Menu.NONE, menuId, Menu.NONE, menuText);
+    }
+
     public MenuItem addToContextMenu(ContextMenuIds itemId) {
         return menu.add(Menu.NONE, itemId.getId(), Menu.NONE, getItemText(itemId));
     }

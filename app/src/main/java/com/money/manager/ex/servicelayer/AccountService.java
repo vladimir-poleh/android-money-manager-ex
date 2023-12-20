@@ -365,6 +365,19 @@ public class AccountService
         return curTotal;
     }
 
+    /**
+     * Set account favorite property.
+     * @param accountId id of the account.
+     * @param favorite new value for favorite property.
+     */
+    public void setFavorite(int accountId, boolean favorite) {
+        AccountRepository repo = new AccountRepository(getContext());
+        Account account = repo.load(accountId);
+
+        account.setFavorite(favorite);
+        repo.save(account);
+    }
+
     // Private
 
     private Cursor getCursorInternal(boolean openOnly, boolean favoriteOnly, List<String> accountTypes) {

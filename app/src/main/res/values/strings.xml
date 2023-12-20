@@ -817,5 +817,6 @@
     <string name="attachment_folder_summary">Select the folder where attachments will be saved</string>
     <string name="pref_attachment_folder">Attachment Folder</string>
 
-
+    <string name="add_to_favourite">Add to Favourite</string>
+    <string name="remove_from_favourite">Remove from Favourite</string>
 </resources>

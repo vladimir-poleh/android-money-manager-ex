@@ -104,10 +104,12 @@ public class AccountListFragment
         SimpleCursorAdapter adapter = (SimpleCursorAdapter) getListAdapter();
         Cursor cursor = (Cursor) adapter.getItem(info.position);
         menu.setHeaderTitle(cursor.getString(cursor.getColumnIndex(Account.ACCOUNTNAME)));
+        boolean isFavorite = "true".equalsIgnoreCase(cursor.getString(cursor.getColumnIndex(Account.FAVORITEACCT)));
 
         MenuHelper menuHelper = new MenuHelper(getActivity(), menu);
         menuHelper.addEditToContextMenu();
         menuHelper.addDeleteToContextMenu();
+        menuHelper.addFavoriteToContextMenu(isFavorite);
     }
 
     @Override
@@ -140,6 +142,14 @@ public class AccountListFragment
                 } else {
                     showDeleteConfirmationDialog(accountId);
                 }
+                break;
+
+            case AddFavorite:
+                setFavorite(accountId, true);
+                break;
+
+            case RemoveFavorite:
+                setFavorite(accountId, false);
                 break;
         }
         return false;
@@ -297,5 +307,10 @@ public class AccountListFragment
         }
         // launch activity
         startActivity(intent);
+    }
+
+    private void setFavorite(int accountId, boolean favorite) {
+        AccountService service = new AccountService(getActivity());
+        service.setFavorite(accountId, favorite);
     }
 }
